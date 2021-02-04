@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ServiceService} from './service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularServiceExample';
+
+  constructor(private _servicee :ServiceService){}
+  greetStudent(){
+    this._servicee.sendMessage('Good Morning');
+  }
+  appreciateStudent(){
+    this._servicee.sendMessage('Well Done');
+  }
 }
